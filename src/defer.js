@@ -35,15 +35,15 @@
  *
  * @author    Mai Nhut Tan <shin@shin.company>
  * @copyright 2019-2023 SHIN Company <https://code.shin.company/>
- * @version   3.6.0
+ * @version   3.7.0
  * @license   {@link https://code.shin.company/defer.js/blob/master/LICENSE|MIT}
  */
 
-/*!@shinsenter/defer.js@3.6.0*/
+/*!@shinsenter/defer.js@3.7.0*/
 (function (window, NAMESPACE, VERSION, CONST_UNDEFINED) {
 
   // var NAMESPACE = 'Defer';
-  // var VERSION   = '3.6.0';
+  // var VERSION   = '3.7.0';
 
   /*
   |--------------------------------------------------------------------------
@@ -201,7 +201,7 @@
   }
 
   // creates a new fresh DOM node
-  function fnCreateNode(nodeName, id, onload, _node) {
+  function fnCreateNode(nodeName, id, callback, _node) {
     if (id) {
       _node = document.getElementById(id);
     } else {
@@ -216,8 +216,8 @@
       }
     }
 
-    if (onload) {
-      fnEventHelper(TYPE_ADD, EVN_LOAD, onload, _node);
+    if (callback) {
+      fnEventHelper(TYPE_ADD, EVN_LOAD, callback, _node);
     }
 
     return _node;
@@ -529,4 +529,4 @@
   // unveils the script tags with type="deferjs"
   fnDeferScripts();
 
-})(this, 'Defer', '3.6.0');
+})(this, 'Defer', '3.7.0');
